@@ -19,7 +19,7 @@ function SearchBar({ onSearch }) {
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search for Books"
       />
-      <button className="btn btn-primary" onClick={handleSubmit}>
+      <button className="btn btn-primary" type="submit">
         Search
       </button>
     </form>

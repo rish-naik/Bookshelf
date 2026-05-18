@@ -24,7 +24,7 @@ function App() {
   }
 
   return (
-    <body>
+    <div>
       <NavBar onSearch={handleSearch} />
       {isLoading ? (
         <p className="placeholder-glow display-3 text-body-secondary">
@@ -37,7 +37,7 @@ function App() {
       {selectedBook && (
         <BookDetail book={selectedBook} onClose={handleClosePopUp} />
       )}
-    </body>
+    </div>
   );
 }
 

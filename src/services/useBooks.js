@@ -26,9 +26,9 @@ function useBooks(initialQuery) {
       fetchBooksData(searchTerm);
     }
 
-    return () => {
-      controller.abort;
-    };
+    // return () => {
+    //   controller.abort();
+    // };
   }, [searchTerm]);
 
   return { books, isLoading, setSearchTerm };
