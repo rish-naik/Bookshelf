@@ -13,6 +13,8 @@ function BookCard({ book, onSeeMore }) {
           className="card-img-top"
           src={thumbnail}
           alt={`Picture of ${title}`}
+          onClick={() => onSeeMore(book)}
+          style={{ cursor: "pointer" }}
         />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>

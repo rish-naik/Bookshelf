@@ -1,4 +1,4 @@
-const BASE_URL = `https://www.googleapis.com/books/v1/volumes?key=AIzaSyBWcsIPUAB0aObF1QR5WZebLnfpZm6cGIE&maxResults=40`;
+const BASE_URL = `https://www.googleapis.com/books/v1/volumes?key=AIzaSyBWcsIPUAB0aObF1QR5WZebLnfpZm6cGIE&maxResults=18`;
 
 async function fetchBooks(query, controller) {
   try {
