@@ -1,7 +1,7 @@
 function BookCard({ book, onSeeMore }) {
   const {
     title = "No Title Available",
-    authors = ["Unkown Authors"],
+    authors = ["Unknown Authors"],
     imageLinks = {},
   } = book.volumeInfo;
   const thumbnail = imageLinks.thumbnail || "https://placehold.co/180x280";

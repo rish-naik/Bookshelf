@@ -5,7 +5,7 @@ function NavBar({ onSearch }) {
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          BookShelf
+          Bookshelf
         </a>
         <SearchBar onSearch={onSearch} />
       </div>

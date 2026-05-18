@@ -1,11 +1,29 @@
+import { useEffect, useRef } from "react";
+
 function BookDetail({ book, onClose }) {
+  const bookRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (bookRef.current && !bookRef.current.contains(e.target)) {
+        onClose();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
   const {
     title = "No Title Available",
-    authors = ["Unkown Authors"],
+    authors = ["Unknown Authors"],
     imageLinks = {},
     publishedDate = "No Date Available",
     description = "No Description Available",
-    pageCount = "Unkown",
+    pageCount = "Unknown",
     previewLink = "www.google.com",
   } = book.volumeInfo;
   const thumbnail = imageLinks.thumbnail || "https://placehold.co/180x280";
@@ -20,21 +38,19 @@ function BookDetail({ book, onClose }) {
       aria-labelledby="exampleModalLongTitle"
       aria-hidden="true"
     >
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
+      <div className="modal-dialog modal-dialog-scrollable" role="document">
+        <div className="modal-content" ref={bookRef}>
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLongTitle">
               {title}
             </h5>
             <button
               type="button"
-              className="close ms-auto"
+              className="close ms-auto btn-close"
               data-dismiss="modal"
               aria-label="Close"
               onClick={onClose}
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+            />
           </div>
           <div className="modal-body">
             <img
@@ -53,7 +69,7 @@ function BookDetail({ book, onClose }) {
             </p>
             <p>
               <strong>Preview Link: </strong>
-              <a href={previewLink} target="_blank">
+              <a href={previewLink} target="_blank" rel="noreferrer">
                 Click Here
               </a>
             </p>
