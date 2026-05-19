@@ -29,7 +29,7 @@ function FavoritesList({ favorites, onSeeMore, setFavorites, onClose }) {
       aria-hidden="true"
     >
       <div
-        className="modal-dialog modal-dialog-scrollable modal-lg"
+        className="modal-dialog modal-dialog-scrollable modal-xl"
         role="document"
       >
         <div className="modal-content" ref={bookRef}>
@@ -54,7 +54,7 @@ function FavoritesList({ favorites, onSeeMore, setFavorites, onClose }) {
                   book={book}
                   onSeeMore={onSeeMore}
                   setFavorites={setFavorites}
-                  colSize="col-6"
+                  colSize="col-4"
                 />
               ))}
             </div>
